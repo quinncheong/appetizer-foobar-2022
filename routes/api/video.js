@@ -42,6 +42,7 @@ router.post("/createVideo", async (req, res) => {
 	} catch (error) {
 		console.log("Hitting the Error");
 		console.log(error);
+        return res.status(400).json("There was an Error with the request");
 	}
 });
 
