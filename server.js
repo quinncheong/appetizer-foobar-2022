@@ -11,9 +11,8 @@ app.use(cors());
 // Body-parser middleware usage for req.body
 app.use(express.json({ limit: "50mb" }));
 
-//Other Routes
 // app.use("/api/database", require("./routes/api/database"));
-// app.use("/api/realtime", require("./routes/api/realtime"));
+app.use("/api/video", require("./routes/api/video"));
 
 // All code below only to be used in production
 if (process.env.NODE_ENV === "production") {

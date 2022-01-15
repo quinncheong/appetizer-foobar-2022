@@ -1,5 +1,5 @@
 // returns a string containing sentences of length 10 max
-function cleanText(text) {
+export function cleanText(text) {
     textCleaned = text.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").toLowerCase();
     textArray = textCleaned.split(' ');
     let result = '';
@@ -21,7 +21,7 @@ function cleanText(text) {
     return result
 }
 
-function createVideo(userInput){
+export function createVideo(userInput){
     let data = cleanText(userInput);
     // call api
 }
