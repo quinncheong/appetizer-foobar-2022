@@ -3,19 +3,29 @@
     <h1>{{ msg }}</h1>
     <p>Built for teachers, by Students.</p>
     <button @click="handleClick" class="btn btn-success">Get Video Url</button>
+    <p v-if="videoUrl">{{ videoUrl }}</p>
+    <p v-else>You have not yet generated a Video! Generate it to see the link</p>
   </div>
 </template>
 
 <script>
 import { generateVideo } from "@/backend_functions/video.js";
+
 export default {
   name: "Landing",
   props: {
     msg: String,
   },
+  data() {
+    return {
+      videoUrl: "",
+    };
+  },
   methods: {
-    handleClick() {
+    async handleClick() {
       console.log("clicked");
+      const newVideoUrl = await generateVideo("hello world");
+      this.videoUrl = newVideoUrl;
     },
   },
 };

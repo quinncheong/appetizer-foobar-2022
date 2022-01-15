@@ -17,6 +17,8 @@ module.exports = {
     "no-process-exit": "off",
     "object-shorthand": "off",
     "class-methods-use-this": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
     "vue/no-multiple-template-root": "off",
     "vue/no-unused-components": "off",
     "vue/require-v-for-key": "warn",
