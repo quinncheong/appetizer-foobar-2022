@@ -16,6 +16,15 @@ if (!process.env.NODE_ENV) {
 // Body-parser middleware usage for req.body
 app.use(express.json({ limit: "50mb" }));
 
+// Logging middleware
+app.use(function (req, res, next) {
+	// console.log(req)
+	console.log(
+		`Received the request from: ${req.protocol}://${req.headers.host}${req.originalUrl}`
+	);
+	next();
+});
+
 // app.use("/api/database", require("./routes/api/database"));
 app.use("/api/video", require("./routes/api/video"));
 
