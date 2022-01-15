@@ -1,15 +1,13 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      Welcome to our the Foobar Fighter's application.
-      </p>
+    <p>Built for teachers, by Students.</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "Landing",
   props: {
     msg: String,
   },
