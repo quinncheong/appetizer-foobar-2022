@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
+const { vidGenEndpoint } = require("../../config.js");
+
 const { cleanText } = require("../../script.js");
 
 // In production it will not be undefined
@@ -16,18 +18,29 @@ const config = {
 	headers: { Authorization: `Bearer ${bearerToken}` },
 };
 
-router.post("/video", (req, res) => {
-	return res.send(req.isAuthenticated());
-});
-
 router.post("/createVideo", async (req, res) => {
 	const { text } = req.body;
 	let sanitizedText = cleanText(text);
-	let videoUrl = await axios.post("", {});
+    console.log(sanitizedText)
+	try {
+		let videoResponse = await axios({
+			method: "post",
+			url: vidGenEndpoint,
+			data: {
+				text: sanitizedText,
+			},
+			headers: { Authorization: `Bearer ${bearerToken}` },
+		});
 
-	return res.status(200).json({
-		message: "Video created successfully",
-	});
+		console.log(videoResponse);
+
+		return res.status(200).json({
+			message: "Video created successfully",
+		});
+	} catch (error) {
+		// console.log(error);
+		console.log(error.request);
+	}
 });
 
 router.get("/getPastVideos", (req, res) => {
@@ -35,3 +48,5 @@ router.get("/getPastVideos", (req, res) => {
 		mock: "mock",
 	});
 });
+
+module.exports = router;
