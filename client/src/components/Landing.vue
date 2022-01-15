@@ -2,14 +2,21 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>Built for teachers, by Students.</p>
+    <button @click="handleClick" class="btn btn-success">Get Video Url</button>
   </div>
 </template>
 
 <script>
+import { generateVideo } from "@/backend_functions/video.js";
 export default {
   name: "Landing",
   props: {
     msg: String,
+  },
+  methods: {
+    handleClick() {
+      console.log("clicked");
+    },
   },
 };
 </script>
