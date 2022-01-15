@@ -8,6 +8,11 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 
+// In production it will not be undefined
+if (!process.env.NODE_ENV) {
+	require("dotenv").config();
+}
+
 // Body-parser middleware usage for req.body
 app.use(express.json({ limit: "50mb" }));
 
