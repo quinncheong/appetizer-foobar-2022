@@ -21,7 +21,6 @@ const config = {
 router.post("/createVideo", async (req, res) => {
 	const { text } = req.body;
 	let sanitizedText = cleanText(text);
-    console.log(sanitizedText)
 	try {
 		let videoResponse = await axios({
 			method: "post",
@@ -32,14 +31,17 @@ router.post("/createVideo", async (req, res) => {
 			headers: { Authorization: `Bearer ${bearerToken}` },
 		});
 
-		console.log(videoResponse);
+        console.log(videoResponse)
 
-		return res.status(200).json({
-			message: "Video created successfully",
-		});
+        // According to WayneHills API
+		if (videoResponse.status === 201) {
+			return res.status(200).json(videoResponse.data.result.location);
+		}
+
+		return res.status(400).json("Error creating video");
 	} catch (error) {
-		// console.log(error);
-		console.log(error.request);
+		console.log("Hitting the Error");
+		console.log(error);
 	}
 });
 
