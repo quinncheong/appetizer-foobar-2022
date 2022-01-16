@@ -1,6 +1,8 @@
 <template>
-  <div class="card-wrapper">
-    <p>Card Component</p>
+  <div class="card-wrapper col-sm-3">
+    <h3>Card Component</h3>
+    <p>This is the body of the card component and we should insert a random photo</p>
+    <button class="btn btn-success">Download</button>
   </div>
 </template>
 
@@ -13,9 +15,24 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+$primary-color: #ffb997;
+$secondary-color: #f67e7d;
+$tertiary-color: #843b62;
+$tertiary-color-2: #621940;
+$dark-color: #0b032d;
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: $primary-color;
+  padding: 1rem;
+
+  .btn-success {
+    background-color: $secondary-color !important;
+    border-color: $tertiary-color ;
+  }
 }
+
 ul {
   list-style-type: none;
   padding: 0;
