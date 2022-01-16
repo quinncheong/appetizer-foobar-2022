@@ -20,7 +20,7 @@ function cleanText(text) {
 		sentence = tmp.join(" ") + ". ";
 		result += sentence.charAt(0).toUpperCase() + sentence.slice(1);
 	}
-	// console.log(result);
+	console.log("The cleaned text is: ", result);
 	return result;
 }
 

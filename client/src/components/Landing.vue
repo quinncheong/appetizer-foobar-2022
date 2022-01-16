@@ -118,7 +118,7 @@ export default {
       left: 25%;
       top: 50%;
       transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.8);
       padding: 2rem;
       width: 400px;
       height: 500px;
