@@ -1,10 +1,10 @@
 // returns a string containing sentences of length 10 max
 function cleanText(text) {
-	textCleaned = text
+	let textCleaned = text
 		.replace(/[^\w\s]|_/g, "")
 		.replace(/\s+/g, " ")
 		.toLowerCase();
-	textArray = textCleaned.split(" ");
+	let textArray = textCleaned.split(" ");
 	let result = "";
 	let tmp = [];
 	for (word of textArray) {

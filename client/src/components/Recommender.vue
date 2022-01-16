@@ -33,8 +33,9 @@ export default {
   .card-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 40px;
+    gap: 10px;
   }
 }
 

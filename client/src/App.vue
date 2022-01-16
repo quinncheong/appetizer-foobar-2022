@@ -3,11 +3,18 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+$primary-color: #ffb997;
+$secondary-color: #f67e7d;
+$tertiary-color: #843b62;
+$tertiary-color-2: #621940;
+$dark-color: #0b032d;
+
 #app {
   font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
