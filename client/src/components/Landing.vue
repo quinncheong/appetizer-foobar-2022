@@ -10,7 +10,7 @@
       </nav>
 
       <!-- If on small screen -->
-      <nav class="nav small" v-else>
+      <!-- <nav class="nav small" v-else>
         <div id="nav-icon3" :class="classNames" @click="showButton">
           <span></span>
           <span></span>
@@ -19,18 +19,19 @@
         </div>
 
         <div id="home-dropdown-small" :class="dropdownClass" @click="showButton">
-          <!-- Router link to other paths -->
           <template :key="route.path" v-for="(route, index) in routes">
             <router-link v-if="route.meta.visible" :to="route.path.toLowerCase()">
               {{ route.name }}
             </router-link>
           </template>
         </div>
-      </nav>
+      </nav> -->
 
       <div class="header-middle-text d-flex">
-        <h4 class="text-white">Save My World,</h4>
-        <h4 class="text-white">Together</h4>
+        <img src="@/assets/main-logo.png" />
+        <h1 class="text-white">Generate your first video, in seconds.</h1>
+        <p class="text-white">Created for Teachers, by Students.</p>
+        <button class="btn btn-info">Get started</button>
       </div>
 
       <a @click="$refs.main.$el.scrollIntoView()" class="header-arrow">
@@ -113,13 +114,22 @@ export default {
     position: relative;
 
     .header-middle-text {
+      position: absolute;
+      left: 25%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       background-color: rgba(0, 0, 0, 0.5);
-      margin-top: 15rem;
       padding: 2rem;
-      width: 20px;
-      width: 70%;
+      width: 400px;
+      height: 500px;
+      justify-content: center;
+      align-items: center;
       flex-direction: column;
-      align-items: flex-start;
+
+      img {
+        height: 200px;
+        width: 200px;
+      }
     }
 
     .links {
