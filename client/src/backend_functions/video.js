@@ -22,10 +22,13 @@ export const generateVideo = (text) => {
     });
 };
 
+// Get summary of text: Text will be sanitized
+// Return -> Object { summary: [], keywords: [] }
 export const getSummary = (text) => {
+  console.log("Getting summary");
   return axios
     .post(videoSummaryAPI, {
-      text
+      text,
     })
     .then((res) => {
       console.log(res);
@@ -33,6 +36,6 @@ export const getSummary = (text) => {
     })
     .catch((err) => {
       console.log(err.response);
-      alert('There was an error')
+      alert("There was an error");
     });
 };
