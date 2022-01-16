@@ -5,6 +5,7 @@ It actually makes a call to http://localhost:8000/api/xxxx but we have done a pr
 on package.json
 */
 const createVideoAPI = "/api/video/createVideo";
+const videoSummaryAPI = "/api/video/getSummary";
 
 export const generateVideo = (text) => {
   console.log("inside the generate Video Function");
@@ -18,5 +19,20 @@ export const generateVideo = (text) => {
     })
     .catch((err) => {
       console.log(err.response);
+    });
+};
+
+export const getSummary = (text) => {
+  return axios
+    .post(videoSummaryAPI, {
+      text
+    })
+    .then((res) => {
+      console.log(res);
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err.response);
+      alert('There was an error')
     });
 };
