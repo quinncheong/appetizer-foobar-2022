@@ -1,49 +1,60 @@
 <template>
   <div class="recommender-wrapper">
-    <h1>My History</h1>
-    <p>See the past videos that you have created</p>
+    <h1>Public Videos</h1>
+    <p>Browse and borrow from other teachers</p>
     <div class="card-wrapper">
-      <Card :key="index" v-for="(card, index) of cards" :title="card.title" :videoUrl="card.url" />
+      <card-public
+        :key="index"
+        v-for="(card, index) of cards"
+        :title="card.title"
+        :videoUrl="card.url"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import Card from "@/components/Card.vue";
+import CardPublic from "@/components/CardPublic.vue";
 
 export default {
   name: "Recommender",
   components: {
-    Card,
+    CardPublic,
   },
   props: {},
   data() {
     return {
       cards: [
         {
-          title: "Science Fair",
-          url: "https://kr.object.ncloudstorage.com/appetizer/2022-01-17-00-15-287.mp4",
+          title: "Medieval Times",
+          author: "Thomas",
+          url: "https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-23-28-58.mp4",
         },
         {
-          title: "Fan fiction",
-          url: "https://kr.object.ncloudstorage.com/appetizer/2022-01-13-15-51-22.mp4",
+          title: "Literary Courage",
+          author: "Thomas",
+          url: "https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-23-31-204.mp4",
         },
         {
-          title: "The love triangle",
-          url: "https://kr.object.ncloudstorage.com/appetizer/2022-01-17-22-33-232%20%281%29.mp4",
+          title: "Attention",
+          author: "Thomas",
+          url: "https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-23-32-274.mp4",
         },
         {
-          title: "Engineering Equipment",
-          url: "https://kr.object.ncloudstorage.com/appetizer/2022-01-17-22-35-168.mp4",
+          title: "The Hard Worker",
+          author: "Thomas",
+          url: "https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-23-43-82.mp4",
         },
         {
-          title: "Storybook",
-          url: "https://kr.object.ncloudstorage.com/appetizer/2022-01-17-22-36-890.mp4",
+          title: "Lonely Winter",
+          author: "Thomas",
+          url: "https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-23-45-572.mp4",
         },
-        {
-          title: "Friendster",
-          url: "https://kr.object.ncloudstorage.com/appetizer/2022-01-17-22-37-355.mp4",
-        },
+        // {
+        //   title: "Friendster",
+        //   author: "Thomas",
+        //   url: "https://kr.object.ncloudstorage.com/appetizer/2022-01-17-22-37-355.mp4",
+        // },
       ],
     };
   },
