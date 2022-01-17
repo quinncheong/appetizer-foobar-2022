@@ -3,7 +3,7 @@
     <h1>My History</h1>
     <p>See the past videos that you have created</p>
     <div class="card-wrapper">
-      <Card :key="index" v-for="(card, index) of cards" />
+      <Card :key="index" v-for="(card, index) of cards" :videoUrl='card'/>
     </div>
   </div>
 </template>
@@ -19,7 +19,14 @@ export default {
   props: {},
   data() {
     return {
-      cards: [1, 2, 3, 4, 5, 6],
+      cards: [
+        { url: 'https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4' },
+        { url: 'https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4' },
+        { url: 'https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4' },
+        { url: 'https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4' },
+        { url: 'https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4' },
+        { url: 'https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4' },
+      ],
     };
   },
 };
@@ -29,6 +36,7 @@ export default {
 <style scoped lang="scss">
 .recommender-wrapper {
   padding: 40px;
+  background: #d3d3d3;
 
   .card-wrapper {
     display: flex;

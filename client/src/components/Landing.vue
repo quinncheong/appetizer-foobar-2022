@@ -39,7 +39,7 @@
       </a>
     </header>
 
-    <h1>{{ msg }}</h1>
+    <h1 class='mt-5'>{{ msg }}</h1>
     <p>For Teachers, by Students.</p>
   </div>
 </template>
@@ -91,6 +91,7 @@ export default {
 <style scoped lang="scss">
 
 .landing-wrapper {
+
   .landing-header {
     height: 100vh;
     display: flex;

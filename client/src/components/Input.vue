@@ -3,8 +3,8 @@
     <textarea placeholder='Enter your script here' v-model="userInput"></textarea>
     <br>
     <button class="btn btn-primary" @click='createVideo'>Create Video</button>
-    <div v-if="loading" class="loader mt-5"></div>
-    <div class="mt-3" v-else>
+    <div v-if="loading" class="loader my-5"></div>
+    <div class="my-5" v-else>
       <div v-if="videoUrl">
         <video width="320" height="240" controls>
           <source src="videoUrl" type="video/mp4">
@@ -33,6 +33,7 @@ export default {
     async createVideo() {
       console.log("clicked");
       this.loading = true;
+      console.log(this.userInput);
       const newVideoUrl = await generateVideo(this.userInput);
       const newVideoSummary = await getSummary(this.userInput);
       this.videoUrl = newVideoUrl;
@@ -47,6 +48,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';
 <style scoped lang="scss">
 textarea {
   width: 500px;

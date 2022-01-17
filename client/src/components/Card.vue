@@ -1,7 +1,8 @@
 <template>
   <div class="card-wrapper col-sm-3">
-    <h3>Card Component</h3>
-    <p>This is the body of the card component and we should insert a random photo</p>
+    <video width="320" height="240" class='mx-auto' controls>
+      <source :src="videoUrl" type="video/mp4">
+    </video>
     <button class="btn btn-success">Download</button>
   </div>
 </template>
@@ -9,7 +10,7 @@
 <script>
 export default {
   name: "Card",
-  props: {},
+  props: ['videoUrl'],
 };
 </script>
 
