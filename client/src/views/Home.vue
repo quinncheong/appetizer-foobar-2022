@@ -7,6 +7,7 @@
       <h3 class="text-white">Browse what others have created</h3>
     </div>
     <Public />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import Landing from "@/components/Landing.vue";
 import Recommender from "@/components/Recommender.vue";
 import Public from "@/components/Public.vue";
 import Input from "../components/Input.vue";
+import Footer from "../components/Footer.vue";
 
 export default {
   name: "Home",
@@ -24,6 +26,7 @@ export default {
     Input,
     Recommender,
     Public,
+    Footer,
   },
 };
 </script>

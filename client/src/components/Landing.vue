@@ -31,15 +31,15 @@
         <img src="@/assets/main-logo.png" />
         <h1 class="text-white" v-html="char"></h1>
         <p class="text-white">Created for Teachers, by Students.</p>
-        <button @click="$refs.main.$el.scrollIntoView()" class="btn btn-info">Get started</button>
+        <button @click="handleClick" class="btn btn-info">Get started</button>
       </div>
 
-      <a @click="$refs.main.$el.scrollIntoView()" class="header-arrow">
+      <a class="header-arrow">
         <span></span>
       </a>
     </header>
 
-    <h1 class="mt-5">{{ msg }}</h1>
+    <h1 id="main" ref="main" class="mt-5">{{ msg }}</h1>
     <p>For Teachers, by Students.</p>
   </div>
 </template>
@@ -73,6 +73,9 @@ export default {
       } else {
         this.typeStatus = false;
       }
+    },
+    handleClick() {
+      this.$refs.main.scrollIntoView();
     },
   },
   created() {

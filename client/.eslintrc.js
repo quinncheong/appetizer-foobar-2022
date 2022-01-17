@@ -17,6 +17,7 @@ module.exports = {
     "no-process-exit": "off",
     "object-shorthand": "off",
     "class-methods-use-this": "off",
+    "linebreak-style": "off",
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "vue/no-multiple-template-root": "off",
