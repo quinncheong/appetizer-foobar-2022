@@ -52,9 +52,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+$primary-color: #ffb997;
 .recommender-wrapper {
   padding: 40px;
-  background: #d3d3d3;
+  background: white;
 
   .card-wrapper {
     display: flex;

@@ -1,9 +1,9 @@
 <template>
   <div class="card-wrapper col-sm-3">
-    <h4>This is a sample title</h4>
+    <h4>{{ title }}</h4>
     <video preload="auto" controls>
       <source
-        src="https://kr.object.ncloudstorage.com/appetizer/2022-01-17-00-15-287.mp4"
+        :src="videoUrl"
         type="video/mp4"
       />
     </video>
@@ -15,7 +15,7 @@
 <script>
 export default {
   name: "Card",
-  props: ["videoUrl"],
+  props: ["videoUrl", "title"],
   methods: {
     copyUrl(url) {
       navigator.clipboard.writeText(url);
@@ -31,7 +31,7 @@ $primary-color: #ffb997;
 $secondary-color: #f67e7d;
 $tertiary-color: #843b62;
 $tertiary-color-2: #621940;
-$dark-color: #0b032d;
+$dark-color: #111e33;
 
 .card-wrapper {
   display: flex;
@@ -39,6 +39,10 @@ $dark-color: #0b032d;
   justify-content: flex-end;
   // background-color: $primary-color;
   padding: 1rem 0rem 0rem 0rem;
+
+  h4 {
+    align-self: flex-start;
+  }
 
   .card-video {
     margin-top: auto;
