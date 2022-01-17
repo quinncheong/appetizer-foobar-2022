@@ -3,7 +3,7 @@
     <h1>My History</h1>
     <p>See the past videos that you have created</p>
     <div class="card-wrapper">
-      <Card :key="index" v-for="(card, index) of cards" :videoUrl="card" />
+      <Card :key="index" v-for="(card, index) of cards" :videoUrl='card.url'/>
     </div>
   </div>
 </template>
@@ -20,24 +20,12 @@ export default {
   data() {
     return {
       cards: [
-        {
-          url: "https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4",
-        },
-        {
-          url: "https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4",
-        },
-        {
-          url: "https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4",
-        },
-        {
-          url: "https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4",
-        },
-        {
-          url: "https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4",
-        },
-        {
-          url: "https://waynehills-api.s3.ap-northeast-2.amazonaws.com/TheFoobarFighters/made/2022-01-17-00-15-287.mp4",
-        },
+        { url: 'https://kr.object.ncloudstorage.com/appetizer/2022-01-17-00-15-287.mp4' },
+        { url: 'https://kr.object.ncloudstorage.com/appetizer/2022-01-13-15-51-22.mp4' },
+        { url: 'https://kr.object.ncloudstorage.com/appetizer/2022-01-17-22-33-232%20%281%29.mp4' },
+        { url: 'https://kr.object.ncloudstorage.com/appetizer/2022-01-17-22-35-168.mp4' },
+        { url: 'https://kr.object.ncloudstorage.com/appetizer/2022-01-17-22-36-890.mp4' },
+        { url: 'https://kr.object.ncloudstorage.com/appetizer/2022-01-17-22-37-355.mp4' },
       ],
     };
   },
