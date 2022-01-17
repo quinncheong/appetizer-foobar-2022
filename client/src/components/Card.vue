@@ -2,6 +2,9 @@
   <div class="card-wrapper col-sm-3">
     <h3>Card Component</h3>
     <p>This is the body of the card component and we should insert a random photo</p>
+    <video preload="auto" class="video" controls>
+      <source src="https://kr.object.ncloudstorage.com/appetizer/2022-01-17-00-15-287.mp4" type="video/mp4">
+    </video>
     <button class="btn btn-success">Download</button>
   </div>
 </template>
@@ -43,5 +46,10 @@ li {
 }
 a {
   color: #42b983;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
 }
 </style>
