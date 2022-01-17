@@ -7,10 +7,11 @@
     <div class="my-5" v-else>
       <div v-if="videoUrl">
         <video width="320" height="240" controls>
-          <source src="videoUrl" type="video/mp4">
+          <source :src="videoUrl" type="video/mp4">
         </video>
         <br>
-        <a :href='videoUrl'>Copy URL</a>
+        <p><b>Topics Detected:</b> {{ keywords.join(', ') }}</p>
+        <a :href='videoUrl'>Download</a>
       </div>
     </div>
   </div>
@@ -26,6 +27,7 @@ export default {
       userInput: '',
       videoUrl: null,
       loading: false,
+      keywords: [],
     };
   },
   methods: {
@@ -35,6 +37,7 @@ export default {
       console.log(this.userInput);
       const newVideoUrl = await generateVideo(this.userInput);
       const newVideoSummary = await getSummary(this.userInput);
+      this.keywords = newVideoSummary.keywords;
       this.videoUrl = newVideoUrl;
       this.loading = false;
     },

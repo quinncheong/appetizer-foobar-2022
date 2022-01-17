@@ -3,7 +3,7 @@
     <h3>Card Component</h3>
     <p>This is the body of the card component and we should insert a random photo</p>
     <video preload="auto" class="video" controls>
-      <source src="https://kr.object.ncloudstorage.com/appetizer/2022-01-17-00-15-287.mp4" type="video/mp4">
+      <source :src="videoUrl" type="video/mp4">
     </video>
     <button class="btn btn-success" @click='copyUrl(videoUrl)'>Download</button>
   </div>
