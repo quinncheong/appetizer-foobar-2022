@@ -31,7 +31,7 @@
         <img src="@/assets/main-logo.png" />
         <h1 class="text-white" v-html="char"></h1>
         <p class="text-white">Created for Teachers, by Students.</p>
-        <button class="btn btn-info">Get started</button>
+        <button @click="$refs.main.$el.scrollIntoView()" class="btn btn-info">Get started</button>
       </div>
 
       <a @click="$refs.main.$el.scrollIntoView()" class="header-arrow">

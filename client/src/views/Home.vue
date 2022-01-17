@@ -2,7 +2,7 @@
   <div class="home">
     <Landing msg="Videomaking in a matter of seconds" />
     <Input />
-    <Recommender />
+    <Recommender ref="main" />
     <div class="call-to-action header">
       <h3 class="text-white">Browse what others have created</h3>
     </div>

@@ -11,7 +11,7 @@
         </video>
         <br />
         <p><b>Topics Detected:</b> {{ keywords.join(", ") }}</p>
-        <a :href="videoUrl">Copy URL</a>
+        <a :href="videoUrl">Download Your Video!</a>
       </div>
     </div>
   </div>

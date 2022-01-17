@@ -1,27 +1,27 @@
 // returns a string containing sentences of length 10 max
-function cleanText(text) {
-	let textCleaned = text
-		.replace(/[^\w\s]|_/g, "")
-		.replace(/\s+/g, " ")
-		.toLowerCase();
-	let textArray = textCleaned.split(" ");
-	let result = "";
-	let tmp = [];
-	for (word of textArray) {
-		if (tmp.length < 10) {
-			tmp.push(word);
+function cleanText(texts) {
+	let textArray = texts.split(". ");
+	let result = [];
+	for (text of textArray) {
+		let sentenceArr = text.split(" ");
+		if (sentenceArr.length <= 10) {
+			result.push(text + ".");
 		} else {
-			sentence = tmp.join(" ") + ". ";
-			result += sentence.charAt(0).toUpperCase() + sentence.slice(1);
-			tmp = [];
+			while (sentenceArr.length > 10) {
+				tmp = sentenceArr.slice(0, 10).join(" ") + ".";
+				tmp = tmp.charAt(0).toUpperCase() + tmp.slice(1);
+				result.push(tmp);
+				sentenceArr = sentenceArr.slice(10);
+			}
+			if (sentenceArr.length > 0) {
+				tmp = sentenceArr.slice(0, 10).join(" ") + ".";
+				tmp = tmp.charAt(0).toUpperCase() + tmp.slice(1);
+				result.push(tmp);
+			}
 		}
 	}
-	if (tmp != []) {
-		sentence = tmp.join(" ") + ". ";
-		result += sentence.charAt(0).toUpperCase() + sentence.slice(1);
-	}
-	console.log("The cleaned text is: ", result);
-	return result;
+	console.log(result.join(" "));
+	return result.join(" ");
 }
 
 function createVideo(userInput) {
