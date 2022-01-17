@@ -1,16 +1,16 @@
 <template>
   <div>
-    <textarea placeholder='Enter your script here' v-model="userInput"></textarea>
-    <br>
-    <button class="btn btn-primary" @click='createVideo'>Create Video</button>
+    <textarea placeholder="Enter your script here" v-model="userInput"></textarea>
+    <br />
+    <button class="btn btn-primary" @click="createVideo">Create Video</button>
     <div v-if="loading" class="loader my-5"></div>
     <div class="my-5" v-else>
       <div v-if="videoUrl">
-        <video width="320" height="240" controls>
-          <source src="videoUrl" type="video/mp4">
+        <video height="500" controls>
+          <source :src="videoUrl" type="video/mp4" />
         </video>
-        <br>
-        <a :href='videoUrl'>Copy URL</a>
+        <br />
+        <a :href="videoUrl">Copy URL</a>
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@ export default {
   name: "Input",
   data() {
     return {
-      userInput: '',
+      userInput: "",
       videoUrl: null,
       loading: false,
     };
@@ -40,7 +40,7 @@ export default {
     },
     copyUrl() {
       navigator.clipboard.writeText(this.videoUrl);
-      alert('Link copied!');
+      alert("Link copied!");
     },
   },
 };

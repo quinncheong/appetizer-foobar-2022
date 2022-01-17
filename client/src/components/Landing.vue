@@ -29,7 +29,7 @@
 
       <div class="header-middle-text d-flex">
         <img src="@/assets/main-logo.png" />
-        <h1 class="text-white" v-html='char'></h1>
+        <h1 class="text-white" v-html="char"></h1>
         <p class="text-white">Created for Teachers, by Students.</p>
         <button class="btn btn-info">Get started</button>
       </div>
@@ -39,7 +39,7 @@
       </a>
     </header>
 
-    <h1 class='mt-5'>{{ msg }}</h1>
+    <h1 class="mt-5">{{ msg }}</h1>
     <p>For Teachers, by Students.</p>
   </div>
 </template>
@@ -54,7 +54,7 @@ export default {
     return {
       videoUrl: "",
       loading: false,
-      char: '',
+      char: "",
       typeStatus: false,
       sentence: "Generate your first video in seconds",
       typeSpeed: 100,
@@ -89,9 +89,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
 .landing-wrapper {
-
   .landing-header {
     height: 100vh;
     display: flex;
