@@ -8,7 +8,7 @@
       />
     </video>
 
-    <button class="btn btn-success" @click="copyUrl(videoUrl)">Download</button>
+    <a :href='videoUrl' class="btn btn-success">Download</a>
   </div>
 </template>
 
@@ -16,12 +16,6 @@
 export default {
   name: "Card",
   props: ["videoUrl", "title"],
-  methods: {
-    copyUrl(url) {
-      navigator.clipboard.writeText(url);
-      alert("Link copied!");
-    },
-  },
 };
 </script>
 
@@ -63,7 +57,7 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #b94289;
 }
 
 video {
