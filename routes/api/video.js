@@ -52,7 +52,7 @@ router.post("/getSummary", async (req, res) => {
     try {
         let summaryResponse = await axios({
             method: "post",
-            body: summaryEndpoint,
+            url: summaryEndpoint,
             data: {
                 text: sanitizedText,
             },

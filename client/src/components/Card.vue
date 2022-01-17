@@ -3,7 +3,7 @@
     <video width="320" height="240" class='mx-auto' controls>
       <source :src="videoUrl" type="video/mp4">
     </video>
-    <button class="btn btn-success">Download</button>
+    <button class="btn btn-success" @click='copyUrl(videoUrl)'>Download</button>
   </div>
 </template>
 
@@ -11,6 +11,12 @@
 export default {
   name: "Card",
   props: ['videoUrl'],
+  methods: {
+    copyUrl(url) {
+      navigator.clipboard.writeText(url);
+      alert('Link copied!');
+    },
+  },
 };
 </script>
 

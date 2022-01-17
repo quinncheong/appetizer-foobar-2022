@@ -10,8 +10,7 @@
           <source src="videoUrl" type="video/mp4">
         </video>
         <br>
-        <span v-html='videoUrl' class='url'></span>
-        <button @click='copyUrl' class="btn btn-secondary">Copy</button>
+        <a :href='videoUrl'>Copy URL</a>
       </div>
     </div>
   </div>
@@ -40,7 +39,7 @@ export default {
       this.loading = false;
     },
     copyUrl() {
-      navigator.clipboard.writeText(this.videoUrl.value);
+      navigator.clipboard.writeText(this.videoUrl);
       alert('Link copied!');
     },
   },
@@ -48,8 +47,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
-@import 'node_modules/bootstrap-vue/src/index.scss';
 <style scoped lang="scss">
 textarea {
   width: 500px;
