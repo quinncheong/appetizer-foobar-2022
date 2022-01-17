@@ -5,14 +5,20 @@
     <video preload="auto" class="video" controls>
       <source src="https://kr.object.ncloudstorage.com/appetizer/2022-01-17-00-15-287.mp4" type="video/mp4">
     </video>
-    <button class="btn btn-success">Download</button>
+    <button class="btn btn-success" @click='copyUrl(videoUrl)'>Download</button>
   </div>
 </template>
 
 <script>
 export default {
   name: "Card",
-  props: {},
+  props: ['videoUrl'],
+  methods: {
+    copyUrl(url) {
+      navigator.clipboard.writeText(url);
+      alert('Link copied!');
+    },
+  },
 };
 </script>
 
